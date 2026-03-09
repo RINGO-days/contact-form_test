@@ -1,0 +1,33 @@
+* {
+    font-family: "Playfair Display", serif;
+}
+.thanks-box{
+    position: relative;
+
+}
+.thanks-text__background{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 280px;
+    white-space: nowrap;
+    z-index: 0;
+    color: lightgray;
+    transform: translate(-50%, -50%);
+}
+.thanks-text__top{
+    position: relative;
+    top: 120px;
+    z-index: 1;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+}
+.button-home{
+    margin-top: 50px;
+    border: none;
+    background-color: #CD853F;
+    color: white;
+    border-radius: 3px;
+    padding: 10px 20px;
+}

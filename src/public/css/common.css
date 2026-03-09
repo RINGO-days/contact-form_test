@@ -1,0 +1,34 @@
+* {
+    font-family: "Playfair Display", serif;
+}
+
+.header{
+    background-color: white;
+}
+.header_inner{
+    border-bottom: gray 0.5px solid;
+    height: 100px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+.header_logo{
+    color: #deb887;
+    font-size: 40px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.title-box{
+    padding-top: 40px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: #deb887;
+}
+
+

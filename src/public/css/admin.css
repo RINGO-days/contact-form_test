@@ -1,0 +1,133 @@
+
+.logout-button {
+    background-color: #F5F5F5;
+    color: #8B4513;
+    border: #8B4513 0.5px solid;
+    border-radius: 3px;
+    padding: 0 10px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.content_box{
+    width: 100%;
+}
+.search-box{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.search__text{
+    background-color: #F5F5F5;
+    padding: 5px 0px 5px 10px;
+    width: 25%;
+    border: gray 0.5px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.gender-box{
+    display: flex;
+    width: 8%;
+    position: relative;
+}
+.search__gender{
+    width: 100%;
+    border: gray 0.5px solid;
+    outline: none;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    padding: 5px 0px 5px 10px;
+    appearance: none;
+    cursor: pointer;
+}
+span{
+    position: absolute;
+    right: 0px;
+    padding-top: 7px;
+    padding-right: 15px;
+    pointer-events: none;
+    font-size: 12px;
+    color: gray;
+
+}
+.category-box{
+    display: flex;
+    width: 15%;
+    position: relative;
+}
+.search__category{
+    width: 100%;
+    border: gray 0.5px solid;
+    outline: none;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    padding: 5px 0px 5px 10px;
+    appearance: none;
+    cursor: pointer;
+}
+.date-box {
+    display: flex;
+    width: 10%;
+    position: relative;
+}
+.search__date {
+    width: 100%;
+    border: gray 0.5px solid;
+    outline: none;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    padding: 5px 0px 5px 10px;
+    appearance: none;
+}
+.search__date::-webkit-calendar-picker-indicator{
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    cursor: pointer;
+}
+.search__button{
+    padding: 5px auto;
+    width: 10%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #8B4513;
+    cursor: pointer;
+}
+.search__reset{
+    padding: 5px auto;
+    width: 10%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #DEB887;
+    cursor: pointer;
+}
+.other-tool-box{
+    width: 75%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.export__button{
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    width: 10%;
+    background-color: #FAF0E6;
+}
+/* ページネーション */
+.contact-list{
+    width: 100%;
+}
+.contact-list__table{
+    width: 75%;
+    margin: 0 auto;
+}
+.contact-list__table__header-raw{
+    background-color: #8B4513;
+    color: white;
+}

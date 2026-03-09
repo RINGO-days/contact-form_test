@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::match(['get','post'],'/',[ContactController::class,'index']);
+Route::get('/reset',[ContactController::class,'reset']);
+Route::post('/confirm',[ContactController::class,'confirm']);
+Route::get('/thanks',[ContactController::class,'thanks']);
+
+Route::get('/register',[AuthController::class,'register']);
+Route::get('/login',[AuthController::class,'login']);
+
+Route::get('/admin',[AdminController::class,'admin']);

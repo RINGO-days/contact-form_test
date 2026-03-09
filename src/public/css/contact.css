@@ -1,0 +1,95 @@
+
+
+.contact-form__group{
+    width: 70%;
+    color: #deb887;
+    display: flex;
+    margin: 0 auto;
+    padding-top:20px ;
+    }
+
+.contact-form__ttl{
+    width: 40%;
+    text-align: left;
+}
+.contact-form__input{
+    width: 60%;
+    display: flex;
+
+}
+.contact-form__input-name{
+    width: 60%;
+    display: flex;
+    gap: 5%;
+}
+.contact-form__input-gender{
+    width: 60%;
+    display: flex;
+    gap: 20%;
+}
+.contact-form__input-tel{
+    display: flex;
+    width: 60%;
+    gap: 10px;
+}
+
+.contact-form__input-item{
+    background-color:#F5F5F5;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    color:#deb887;
+    padding-left: 10px;
+}
+.contact-form__input-item-tel{
+    background-color: #F5F5F5;
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    color: #deb887;
+}
+.contact-form__category{
+    position: relative;
+    background-color: #F5F5F5;
+    width: 35%;
+}
+
+.contact-form__select{
+    border: none;
+    background-color: #F5F5F5;
+    width: 100%;
+    color: #deb887;
+    padding-left: 10px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+.contact-form__category>span {
+    position: absolute;
+    right: 15px;
+}
+.contact-form__input-textarea{
+    background-color: #F5F5F5;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    color: #deb887;
+    padding-left: 10px;
+    resize: none;
+    outline: none;
+    min-height: 120px;
+}
+.button__inner{
+    text-align: center;
+    margin-top: 20px;
+
+}
+.button__submit{
+    border-radius: 3px;
+    background-color: #CD853F;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+}
+
