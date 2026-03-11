@@ -1,12 +1,42 @@
-
+.error-message__box{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+}
+.error-message__box__empty{
+    width: 40%;
+    height: 30px;
+}
+.error-message{
+    width: 60%;
+    display: flex;
+    gap: 5%;
+    font-weight: bold;
+}
+.error-message__tel{
+    width: 60%;
+    display: flex;
+    gap: 10%;
+}
+.error-message >p{
+    width: 100%;
+    font-size: 12px;
+    margin: 0 auto;
+    color: red;
+}
 
 .contact-form__group{
     width: 70%;
-    color: #deb887;
+    color: #A52A2A;
     display: flex;
     margin: 0 auto;
-    padding-top:20px ;
-    }
+}
+::placeholder{
+    color: #deb887;
+}
+.contact-form__select:invalid {
+    color: #deb887;
+}
 
 .contact-form__ttl{
     width: 40%;
@@ -38,7 +68,7 @@
     width: 100%;
     border: none;
     border-radius: 3px;
-    color:#deb887;
+    color: #A52A2A;
     padding-left: 10px;
 }
 .contact-form__input-item-tel{
@@ -47,7 +77,7 @@
     text-align: center;
     border: none;
     border-radius: 3px;
-    color: #deb887;
+    color: #A52A2A;
 }
 .contact-form__category{
     position: relative;
@@ -59,7 +89,7 @@
     border: none;
     background-color: #F5F5F5;
     width: 100%;
-    color: #deb887;
+    color: #A52A2A;
     padding-left: 10px;
     appearance: none;
     outline: none;
@@ -68,13 +98,14 @@
 .contact-form__category>span {
     position: absolute;
     right: 15px;
+    pointer-events: none;
 }
 .contact-form__input-textarea{
     background-color: #F5F5F5;
     width: 100%;
     border: none;
     border-radius: 3px;
-    color: #deb887;
+    color: #A52A2A;
     padding-left: 10px;
     resize: none;
     outline: none;

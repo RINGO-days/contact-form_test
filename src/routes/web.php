@@ -19,7 +19,7 @@ use App\Http\Controllers\AdminController;
 Route::match(['get','post'],'/',[ContactController::class,'index']);
 Route::get('/reset',[ContactController::class,'reset']);
 Route::post('/confirm',[ContactController::class,'confirm']);
-Route::get('/thanks',[ContactController::class,'thanks']);
+Route::post('/thanks',[ContactController::class,'thanks']);
 
 Route::get('/register',[AuthController::class,'register']);
 Route::get('/login',[AuthController::class,'login']);

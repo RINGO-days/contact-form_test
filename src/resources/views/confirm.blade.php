@@ -34,7 +34,7 @@
         </tr>
         <tr class="contact-confirm__raw">
             <th class="contact-confirm__ttl">電話番号</th>
-            <td class="contact-confirm__item">{{$contact['tel']}}</td>
+            <td class="contact-confirm__item">{{$contact['first_tel']}}</td>
         </tr>
         <tr class="contact-confirm__raw">
             <th class="contact-confirm__ttl">住所</th>
@@ -50,13 +50,22 @@
         </tr>
         <tr class="contact-confirm__raw">
             <th class="contact-confirm__ttl">お問い合わせ内容</th>
-            <td class="contact-confirm__item">{{$contact['text']}}</td>
+            <td class="contact-confirm__item">{{$contact['detail']}}</td>
         </tr>
     </table>
 </div>
 <div class="button__inner">
-    <form action="/thanks">
+    <form action="/thanks" method="post">
         @csrf
+        <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}">
+        <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}">
+        <input type="hidden" name="gender" value="{{ $contact['gender'] }}">
+        <input type="hidden" name="email" value="{{ $contact['email'] }}">
+        <input type="hidden" name="tel" value="{{ $contact['tel'] }}">
+        <input type="hidden" name="address" value="{{ $contact['address'] }}">
+        <input type="hidden" name="building" value="{{ $contact['building'] }}">
+        <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
+        <input type="hidden" name="detail" value="{{ $contact['detail'] }}">
         <button class="button__submit">送信</button>
     </form>
     <form action="/" method="post">
