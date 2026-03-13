@@ -8,19 +8,24 @@
     cursor: pointer;
     margin-right: 30px;
 }
+.flash_message__box {
+    width: 75%;
+}
 .content_box{
     width: 100%;
 }
 .search-box{
     width: 75%;
+    height: 40px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .search__text{
     background-color: #F5F5F5;
     padding: 5px 0px 5px 10px;
-    width: 25%;
+    width: 30%;
     border: gray 0.5px solid;
     border-radius: 5px;
     cursor: pointer;
@@ -40,11 +45,11 @@
     appearance: none;
     cursor: pointer;
 }
-span{
+.select-icon{
     position: absolute;
     right: 0px;
-    padding-top: 7px;
-    padding-right: 15px;
+    padding-top: 9px;
+    padding-right: 10px;
     pointer-events: none;
     font-size: 12px;
     color: gray;
@@ -52,8 +57,9 @@ span{
 }
 .category-box{
     display: flex;
-    width: 15%;
+    width: 18%;
     position: relative;
+    
 }
 .search__category{
     width: 100%;
@@ -89,45 +95,151 @@ span{
     cursor: pointer;
 }
 .search__button{
-    padding: 5px auto;
-    width: 10%;
+    width: 8%;
     border: none;
     border-radius: 5px;
     color: white;
     background-color: #8B4513;
     cursor: pointer;
+    padding: 5px 0px;
 }
 .search__reset{
-    padding: 5px auto;
-    width: 10%;
+    display: block;
+    width: 8%;
+    padding: 5px 0px;
     border: none;
     border-radius: 5px;
     color: white;
     background-color: #DEB887;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    margin-left: -50px;
 }
 .other-tool-box{
     width: 75%;
     margin: 30px auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .export__button{
-    border: none;
+    border: 0.5px gray solid;
     border-radius: 3px;
     padding: 10px;
-    width: 10%;
+    width: 15%;
     background-color: #FAF0E6;
 }
-/* ページネーション */
+
+.pagination li,
+.pagination a,
+.pagination span {
+    background-color: white;
+    color: #333;
+}
+.pagination .active span,
+.pagination span[aria-current="page"] {
+    background-color: #8b7969;
+    color: #fff !important;
+    border-color: #8b7969;
+}
+.pagination a:hover {
+    background-color: gray;
+    border-color: #bbb;
+    color: white;
+}
+
+
+
 .contact-list{
     width: 100%;
 }
 .contact-list__table{
     width: 75%;
     margin: 0 auto;
+    border: 1px #DEB887 solid;
+    border-collapse: collapse;
 }
 .contact-list__table__header-raw{
     background-color: #8B4513;
     color: white;
+    border-bottom: 1px #DEB887 solid;
 }
+.contact-list__table__header{
+    text-align: left;
+    padding-left: 20px;
+}
+.contact-list__table__item-raw{
+    border: 1px #DEB887 solid;
+}
+.contact-list__table__item{
+    padding-left: 20px;
+    height: 60px;
+}
+.contact-list__table__item__category{
+    padding-left: 20px;
+    height: 60px;
+}
+.button__modal{
+    border: #DEB887 1px solid;
+    color: #DEB887;
+    background-color: white;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.modal{
+    display: none;
+    top: 0;
+    width: 60%;
+    z-index: 9999;
+
+}
+.modal:target{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-inner {
+    background: #fff;
+    padding: 40px;
+    width: 50%;
+    height: 70%;
+    text-align: left;
+    border: #DEB887 1px solid;
+    box-shadow: 3px 3px 3px gray;
+    position: relative;
+}
+.modal-table{
+    width: 100%;
+    height: 80%;
+}
+.close-button{
+    position: absolute;
+    text-decoration: none;
+    left: 93%;
+    top: 10px;
+    border: #DEB887 1px solid;
+    border-radius: 50%;
+    color: #DEB887;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 7.5px;
+    font-size: 70px;
+}
+.delete-button__inner{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 60px;
+}
+.delete-button{
+    padding: 5px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+

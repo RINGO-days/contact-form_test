@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-<p>Contact</p>
+Contact
 @endsection
 
 @section('main')

@@ -21,7 +21,7 @@ Route::get('/reset',[ContactController::class,'reset']);
 Route::post('/confirm',[ContactController::class,'confirm']);
 Route::post('/thanks',[ContactController::class,'thanks']);
 
-Route::get('/register',[AuthController::class,'register']);
-Route::get('/login',[AuthController::class,'login']);
 
-Route::get('/admin',[AdminController::class,'admin']);
+Route::match(['get','post'],'/admin',[AdminController::class,'admin'])->middleware('auth');
+Route::get('/admin/search',[AdminController::class,'admin']);
+Route::delete('/delete',[AdminController::class,'delete']);

@@ -19,11 +19,14 @@
             </form>
             @yield('nav')
         </div>
-        <div class="title-box">
+        <div class="title_box">
             @yield('title')
+            <div class="flash_message__box">
+            @yield('flash_message')
+            </div>
         </div>
+
     </header>
-    
     <main>
         @yield('main')
     </main>

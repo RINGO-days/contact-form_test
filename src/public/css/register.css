@@ -1,6 +1,9 @@
 body{
     background-color: #FAEBD7;
 }
+.flash_message__box {
+    background-color: #FAEBD7;
+}
 
 .login-button{
     background-color: #F5F5F5;
@@ -11,13 +14,13 @@ body{
     cursor: pointer;
     margin-right: 30px;
 }
-.title-box {
+.title_box {
     background-color: #FAEBD7;
 }
 
 .register-box{
     margin: 0px auto;
-    padding-top: 30px;
+    padding-top: 20px;
     width: 60%;
     background-color: white;
     border-radius: 5px;
@@ -29,7 +32,7 @@ p{
 .register-form__item{
     color: #deb887;
     width: 70%;
-    margin: 0px auto 50px auto;
+    margin: 0px auto 30px auto;
 }
 .register-form__input{
     background-color: #F5F5F5;
@@ -39,9 +42,19 @@ p{
     color: gray;
     padding-left: 20px;
 }
+.error-message__box {
+    height: 30px;
+    color: red;
+}
+
+.input-error {
+    background-color: #FFE4E1;
+    border: 1px solid #ff0000;
+    outline: none;
+}
 .button__inner{
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     
 }
 .button__submit{

@@ -11,23 +11,47 @@
 @endsection
 
 @section('title')
-    <p>Register</p>
+Register
 @endsection
+
+@section('flash_message')
+@if(count($errors) > 0)
+<span>入力内容に誤りがありました</span>
+@endif
+@endsection
+
 
 @section('main')
 <div class="register-box">
-    <form action="/">
+    <form action="/register" method="post">
+        @csrf
         <div class="register-form__item">
             <p>お名前</p>
-            <input class="register-form__input" type="text" name="name" placeholder="例：山田 太郎">
+            <input class="register-form__input @error('name') input-error @enderror" type="text" name="name" value="{{old('name')}}" placeholder="例：山田 太郎">
+            <div class="error-message__box">
+            @error('name')
+                {{$message}}
+            @enderror
+            </div>
         </div>
         <div class="register-form__item">
             <p>メールアドレス</p>
-            <input class="register-form__input" type="email" name="email" placeholder="例：test@example.com">
+            <input class="register-form__input @error('name') input-error @enderror" type="email" name="email" value="{{old('email')}}" placeholder="例：test@example.com">
+            <div class="error-message__box">
+            @error('email')
+                {{$message}}
+            @enderror
+            </div>
         </div>
         <div class="register-form__item">
             <p>パスワード</p>
-            <input class="register-form__input" type="password" name="password" placeholder="例：coachtech1106">
+            <input class="register-form__input @error('name') input-error @enderror" type="password" name="password" placeholder="例：coachtech1106">
+            <div class="error-message__box">
+            @error('password')
+                {{$message}}
+            @enderror
+            </div>
+
         </div>
         <div class="button__inner">
             <button class="button__submit">登録</button>

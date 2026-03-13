@@ -1,6 +1,9 @@
 body {
     background-color: #FAEBD7;
 }
+.flash_message__box {
+    background-color: #FAEBD7;
+}
 
 .register-button {
     background-color: #F5F5F5;
@@ -12,7 +15,7 @@ body {
     margin-right: 30px;
 }
 
-.title-box {
+.title_box {
     background-color: #FAEBD7;
 }
 .login-box {
@@ -23,7 +26,7 @@ body {
     border-radius: 5px;
 }
 
-p {
+.login-form__item > p {
     margin-bottom: 3px;
     font-size: 25px;
 }
@@ -41,6 +44,15 @@ p {
     color: gray;
     height: 50px;
     padding-left: 20px;
+}
+.error-message__box{
+    height: 30px;
+    color: red;
+}
+.input-error{
+    background-color: #FFE4E1;
+    border: 1px solid #ff0000;
+    outline: none;
 }
 
 .button__inner {

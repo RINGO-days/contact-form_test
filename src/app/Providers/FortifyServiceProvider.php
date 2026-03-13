@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use Laravel\Fortify\Contracts\LogoutResponse;
 
 use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
@@ -10,8 +11,14 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Laravel\Fortify\Contracts\ResetsUserPasswords;
+use Laravel\Fortify\Contracts\UpdatesUserPasswords;
+use Laravel\Fortify\Contracts\RegisterResponse;
+use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Illuminate\Support\Str;
+use Laravel\Fortify\Contracts\LoginResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -20,7 +27,10 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(CreatesNewUsers::class, CreateNewUser::class);
+        $this->app->singleton(UpdatesUserProfileInformation::class, UpdateUserProfileInformation::class);
+        $this->app->singleton(UpdatesUserPasswords::class, UpdateUserPassword::class);
+        $this->app->singleton(ResetsUserPasswords::class, ResetUserPassword::class);
     }
 
     /**
@@ -28,19 +38,39 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Fortify::createUsersUsing(CreateNewUser::class);
-        Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
-        Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
-        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+        Fortify::registerView(function () {
+            return view('register');
+        });
+
+        Fortify::loginView(function () {
+            return view('login');
+        });
 
         RateLimiter::for('login', function (Request $request) {
-            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
+            $throttleKey = Str::transliterate(Str::lower($request->input('email')).'|'.$request->ip());
 
             return Limit::perMinute(5)->by($throttleKey);
         });
+        $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
+        public function toResponse($request)
+        {
+            return redirect('/login')->with('result', 'ログアウトしました');;
+        }
+    });
 
-        RateLimiter::for('two-factor', function (Request $request) {
-            return Limit::perMinute(5)->by($request->session()->get('login.id'));
+
+        $this->app->instance(RegisterResponse::class, new class implements RegisterResponse {
+        public function toResponse($request)
+        {
+            return redirect('/admin')->with('result', '会員登録が完了しました');
+        }
+    });
+
+        $this->app->instance(LoginResponse::class, new class implements LoginResponse {
+            public function toResponse($request)
+            {
+                return redirect('/admin')->with('result', 'ログインしました');
+            }
         });
     }
 }

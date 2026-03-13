@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-<p>Confirm</p>
+Confirm
 @endsection
 
 @section('main')
