@@ -22,6 +22,6 @@ Route::post('/confirm',[ContactController::class,'confirm']);
 Route::post('/thanks',[ContactController::class,'thanks']);
 
 
-Route::match(['get','post'],'/admin',[AdminController::class,'admin'])->middleware('auth');
-Route::get('/admin/search',[AdminController::class,'admin']);
+Route::get('/admin',[AdminController::class,'admin'])->middleware('auth');
 Route::delete('/delete',[AdminController::class,'delete']);
+Route::get('/export', [AdminController::class, 'export'])->middleware('auth')->name('export');

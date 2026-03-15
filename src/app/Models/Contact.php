@@ -30,9 +30,9 @@ class Contact extends Model
             $query->where('category_id',$category_id);
         }
     }
-    public function scopeDateSearch($query,$updated_at){
-        if(!empty($updated_at)){
-            $query->whereDate('updated_at',$updated_at);
+    public function scopeDateSearch($query,$created_at){
+        if(!empty($created_at)){
+            $query->whereDate('created_at',$created_at);
         }
     }
     public function category(){

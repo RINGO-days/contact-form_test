@@ -38,7 +38,7 @@ Login
         </div>
         <div class="login-form__item">
             <p>パスワード</p>
-            <input class="login-form__input @error('email') input-error @enderror"  type="password" name="password" placeholder="例：coachtech1106">
+            <input class="login-form__input @if($errors->has('email') || $errors->has('password')) input-error @endif"  type="password" name="password" placeholder="例：coachtech1106">
             <div class="error-message__box">
                 @error('password')
                 {{$message}}

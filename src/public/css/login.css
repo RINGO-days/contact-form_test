@@ -41,9 +41,12 @@ body {
     background-color: #F5F5F5;
     width: 100%;
     border: none;
-    color: gray;
     height: 50px;
     padding-left: 20px;
+    outline: none;
+}
+.login-form__input::placeholder{
+    color: gray;
 }
 .error-message__box{
     height: 30px;

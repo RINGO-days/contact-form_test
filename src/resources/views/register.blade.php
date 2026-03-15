@@ -16,7 +16,7 @@ Register
 
 @section('flash_message')
 @if(count($errors) > 0)
-<span>入力内容に誤りがありました</span>
+<span class="message-info">入力内容に誤りがありました</span>
 @endif
 @endsection
 

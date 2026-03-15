@@ -10,7 +10,7 @@ Contact
 
 @section('main')
 <div class="contact-form">
-    <form action="/confirm" method="POST">
+    <form action="/confirm" method="post" novalidate>
         @csrf
         <div class="contact-form__group">
             <div class="contact-form__ttl">お名前

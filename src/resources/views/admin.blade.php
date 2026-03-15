@@ -26,13 +26,14 @@ Admin
 
 @section('main')
 <div class="content-box">
-    <form action="/admin/search" method="get">
+    <form action="/admin" method="get" novalidate>
     <div class="search-box">
         <input class="search__text" type="text" name="keyword" value="{{
-        request('keyword')}}" placeholder="名前やメールアドレスを入力してください">
+        request('keyword')}}" placeholder="名前やメールアドレスを入力してください" required>
         <div class="gender-box">
-            <select class="search__gender" name="gender">
+            <select class="search__gender" name="gender" required>
                 <option value="" {{request('gender') == '' ? 'selected' : ''}} hidden>性別</option>
+                <option value="">---</option>
                 <option value="1" {{request('gender') == '1' ? 'selected' : ''}}>男性</option>
                 <option value="2" {{request('gender') == '2' ? 'selected' : ''}}>女性</option>
                 <option value="3" {{request('gender') == '3' ? 'selected' : ''}}>その他</option>
@@ -40,8 +41,9 @@ Admin
             <span class="select-icon">▼</span>
         </div>
         <div class="category-box">
-            <select class="search__category" name="category">
-                <option value=""hidden>お問い合わせの種類</option>
+            <select class="search__category" name="category" required>
+                <option class="default-select" value=""hidden>お問い合わせの種類</option>
+                <option value="">---</option>
                 @foreach($categories as $category)
                 <option value="{{$category->id}}" {{request('category') == $category->id ? 'selected' : '' }}>{{$category->content}}</option>
                 @endforeach
@@ -49,21 +51,25 @@ Admin
             <span class="select-icon">▼</span>
         </div>
         <div class="date-box">
-            <input class="search__date" type="date" value="{{request('updated_at')}}" name="updated_at">
+            <input class="search__date" type="date" value="{{request('created_at')}}" name="created_at" required>
             <span class="select-icon">▼</span>
         </div>
         <button class="search__button">検索</button>
-
     <a href="/admin" class="search__reset">
         リセット
     </a>
 </form>
     </div>
     <div class="other-tool-box">
-        <button class="export__button">エクスポート</button>
+        <a href="{{route('export',request()->query())}}">
+            <button class="export__button">エクスポート</button>
+    </a>
         <div class="pagination">
     {{ $contacts->links('pagination::bootstrap-4') }}
 </div>
+    </div>
+    <div class="page-number">
+        （{{$contacts->firstItem()}} ~ {{$contacts->lastItem()}}）件 / 全 {{$contacts->total()}} 件
     </div>
     <div class="contact-list">
         <table class="contact-list__table">
@@ -147,17 +153,19 @@ Admin
                                 <form action="/delete" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="delete-button" onclick="return confirm('本当に削除しますか？')">削除</button>
+                                    <button class="delete-button">削除</button>
                                     <input type="hidden" value="{{$contact->id}}" name="id">
                                 </form>
                             </div>
                         </div>
                     </div>
                 </td>
-
             </tr>
             @endforeach
         </table>
+        @if(count($contacts) == 0)
+            <div class="empty-message" style="color: red;">条件に一致する問い合わせはありませんでした。</div>
+        @endif
     </div>
 </div>
 @endsection

@@ -29,11 +29,23 @@
     border: gray 0.5px solid;
     border-radius: 5px;
     cursor: pointer;
+    outline: none;
+}
+.search__text:not(:invalid){
+    background-color: #B0E0E6;
+    border: none;
 }
 .gender-box{
     display: flex;
     width: 8%;
     position: relative;
+}
+.search__gender:invalid{
+    color: gray;
+}
+.search__gender:not(:invalid){
+    background-color: #B0E0E6;
+    border: none;
 }
 .search__gender{
     width: 100%;
@@ -52,14 +64,14 @@
     padding-right: 10px;
     pointer-events: none;
     font-size: 12px;
-    color: gray;
+    color: #cecece;
 
 }
 .category-box{
     display: flex;
     width: 18%;
     position: relative;
-    
+
 }
 .search__category{
     width: 100%;
@@ -70,6 +82,13 @@
     padding: 5px 0px 5px 10px;
     appearance: none;
     cursor: pointer;
+}
+.search__category:invalid{
+    color: gray;
+}
+.search__category:not(:invalid){
+    background-color: #B0E0E6;
+    border: none;
 }
 .date-box {
     display: flex;
@@ -84,6 +103,10 @@
     background-color: #F5F5F5;
     padding: 5px 0px 5px 10px;
     appearance: none;
+}
+.search__date:not(:invalid){
+    background-color: #B0E0E6;
+    border: none;
 }
 .search__date::-webkit-calendar-picker-indicator{
     background: transparent;
@@ -102,9 +125,9 @@
     background-color: #8B4513;
     cursor: pointer;
     padding: 5px 0px;
+    height: 35px;
 }
 .search__reset{
-    display: block;
     width: 8%;
     padding: 5px 0px;
     border: none;
@@ -114,20 +137,22 @@
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    margin-left: -50px;
+    margin-left: -25px;
+    height: 35px;
 }
 .other-tool-box{
     width: 75%;
-    margin: 30px auto;
+    margin: 30px auto 0 auto;
     display: flex;
     justify-content: space-between;
+    height: 50px;
 }
 .export__button{
     border: 0.5px gray solid;
     border-radius: 3px;
-    padding: 10px;
-    width: 15%;
+    padding: 5px 10px;
     background-color: #FAF0E6;
+    white-space: nowrap;
 }
 
 .pagination li,
@@ -147,6 +172,14 @@
     border-color: #bbb;
     color: white;
 }
+.page-number{
+    text-align: right;
+    color: #ff6a00;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 20px;
+
+}
 
 
 
@@ -162,7 +195,6 @@
 .contact-list__table__header-raw{
     background-color: #8B4513;
     color: white;
-    border-bottom: 1px #DEB887 solid;
 }
 .contact-list__table__header{
     text-align: left;
@@ -170,14 +202,20 @@
 }
 .contact-list__table__item-raw{
     border: 1px #DEB887 solid;
+        height: 50px;
 }
 .contact-list__table__item{
     padding-left: 20px;
-    height: 60px;
 }
 .contact-list__table__item__category{
     padding-left: 20px;
-    height: 60px;
+
+}
+.empty-message{
+    text-align: center;
+    width: 75%;
+    margin: 30px auto;
+    font-size: 20px;
 }
 .button__modal{
     border: #DEB887 1px solid;
@@ -186,6 +224,7 @@
     border-radius: 3px;
     padding: 5px 10px;
     text-decoration: none;
+    white-space: nowrap;
 }
 .modal{
     display: none;
