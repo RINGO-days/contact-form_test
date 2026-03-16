@@ -23,7 +23,7 @@ Register
 
 @section('main')
 <div class="register-box">
-    <form action="/register" method="post">
+    <form action="/register" method="post" novalidate>
         @csrf
         <div class="register-form__item">
             <p>お名前</p>

@@ -26,14 +26,14 @@ Admin
 
 @section('main')
 <div class="content-box">
-    <form action="/admin" method="get" novalidate>
+    <form action="/search" method="get" novalidate>
     <div class="search-box">
         <input class="search__text" type="text" name="keyword" value="{{
         request('keyword')}}" placeholder="名前やメールアドレスを入力してください" required>
         <div class="gender-box">
             <select class="search__gender" name="gender" required>
                 <option value="" {{request('gender') == '' ? 'selected' : ''}} hidden>性別</option>
-                <option value="">---</option>
+                <option value="0" {{request('gender') == '0' ? 'selected' : ''}}>全て</option>
                 <option value="1" {{request('gender') == '1' ? 'selected' : ''}}>男性</option>
                 <option value="2" {{request('gender') == '2' ? 'selected' : ''}}>女性</option>
                 <option value="3" {{request('gender') == '3' ? 'selected' : ''}}>その他</option>
@@ -43,7 +43,6 @@ Admin
         <div class="category-box">
             <select class="search__category" name="category" required>
                 <option class="default-select" value=""hidden>お問い合わせの種類</option>
-                <option value="">---</option>
                 @foreach($categories as $category)
                 <option value="{{$category->id}}" {{request('category') == $category->id ? 'selected' : '' }}>{{$category->content}}</option>
                 @endforeach

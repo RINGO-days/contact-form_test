@@ -9,7 +9,12 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AdminController extends Controller
 {
-    public function admin(Request $request){
+        public function admin(){
+            $categories = Category::all();
+            $contacts = Contact::paginate(7);
+            return view('admin',compact('categories','contacts'))->with('success','ログインしました');
+        }
+        public function search(Request $request){
         $categories = Category::all();
         $contacts = Contact::with('category')->nameEmailSearch($request->keyword)->genderSearch($request->gender)->categorySearch($request->category)->dateSearch($request->created_at)->paginate(7)->appends($request->all());
         return view('admin', compact('categories','contacts'));
@@ -29,7 +34,8 @@ class AdminController extends Controller
                 $query->where(function($q) use ($request){
                     $q->where('last_name' , 'like' , '%' . $request->keyword . '%')
                     ->orWhere('first_name' , 'like' , '%' . $request->keyword . '%')
-                    ->orWhere('email' , 'like' , '%' . $request->keyword .'%');
+                    ->orWhere('email' , 'like' , '%' . $request->keyword .'%')
+                    ->orWhereRaw('CONCAT(last_name, first_name) like ?', ['%' . $keyword . '%']);
                 });
             }
         if($request->filled('gender'))

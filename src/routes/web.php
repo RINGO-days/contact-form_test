@@ -23,5 +23,7 @@ Route::post('/thanks',[ContactController::class,'thanks']);
 
 
 Route::get('/admin',[AdminController::class,'admin'])->middleware('auth');
+Route::get('/search',[AdminController::class,'search']);
+
 Route::delete('/delete',[AdminController::class,'delete']);
 Route::get('/export', [AdminController::class, 'export'])->middleware('auth')->name('export');

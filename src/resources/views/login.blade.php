@@ -25,7 +25,7 @@ Login
 
 @section('main')
 <div class="login-box">
-    <form action="/login" method="post">
+    <form action="/login" method="post" novalidate>
         @csrf
         <div class="login-form__item">
             <p>メールアドレス</p>

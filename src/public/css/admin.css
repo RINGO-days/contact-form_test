@@ -202,7 +202,10 @@
 }
 .contact-list__table__item-raw{
     border: 1px #DEB887 solid;
-        height: 50px;
+    height: 50px;
+}
+.contact-list__table__item-raw:hover{
+    background-color: #DCDCDC;
 }
 .contact-list__table__item{
     padding-left: 20px;

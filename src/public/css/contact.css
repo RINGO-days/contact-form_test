@@ -83,6 +83,7 @@
     position: relative;
     background-color: #F5F5F5;
     width: 35%;
+    border-radius: 3px;
 }
 
 .contact-form__select{
@@ -94,6 +95,7 @@
     appearance: none;
     outline: none;
     cursor: pointer;
+    height: 25px;
 }
 .contact-form__category>span {
     position: absolute;
@@ -113,8 +115,6 @@
 }
 .button__inner{
     text-align: center;
-    margin-top: 20px;
-
 }
 .button__submit{
     border-radius: 3px;
@@ -123,4 +123,11 @@
     padding: 10px 30px;
     border: none;
 }
+.input-error {
+    background-color: #FFE4E1;
+    border: 1px solid #ff0000;
+    outline: none;
+    border-radius: 3px;
+}
+
 

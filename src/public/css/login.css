@@ -69,4 +69,5 @@ body {
     border-radius: 3px;
     background-color: #deb887;
     padding: 10px 20px;
+    cursor: pointer;
 }

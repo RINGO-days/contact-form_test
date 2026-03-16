@@ -29,12 +29,12 @@ Confirm
             </td>
         </tr>
         <tr class="contact-confirm__raw">
-            <th class="contact-confirm__ttl">メースアドレス</th>
+            <th class="contact-confirm__ttl">メールアドレス</th>
             <td class="contact-confirm__item">{{$contact['email']}}</td>
         </tr>
         <tr class="contact-confirm__raw">
             <th class="contact-confirm__ttl">電話番号</th>
-            <td class="contact-confirm__item">{{$contact['first_tel']}}</td>
+            <td class="contact-confirm__item">{{$contact['tel']}}</td>
         </tr>
         <tr class="contact-confirm__raw">
             <th class="contact-confirm__ttl">住所</th>
